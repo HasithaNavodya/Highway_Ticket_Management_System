@@ -1,0 +1,53 @@
+#server:
+#  port: 8090
+#eureka:
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    service-url:
+#      defualzone: http://localhost:8761/eureka
+#spring:
+#  application:
+#    name: api-gateway
+#  cloud:
+#    gateway:
+#      mvc:
+#        routes:
+#          - id: customer-service
+#            uri: lb://customer-service
+#            predicates:
+#              - Path=/api/v1/customer/**
+#          - id: order-service
+#            uri: lb://order-service
+#            predicates:
+#              - Path=/api/v1/order/**
+
+
+server:
+  port: 8090
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: vehicle-service
+          uri: lb://vehicle-service
+          predicates:
+            - Path=/customer/**
+        - id: order-service
+          uri: lb://order-service
+          predicates:
+            - Path=/order/**
+        - id: root-redirect
+          uri: lb://customer-service  # or any other service
+          predicates:
+            - Path=/
+          filters:
+            - RedirectTo=302,/customer/**  # or any other endpoint

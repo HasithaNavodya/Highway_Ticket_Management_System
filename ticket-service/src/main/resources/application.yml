@@ -1,0 +1,24 @@
+#spring:
+#  application:
+#    name: customer-service
+#  config:
+#      import: "optional:configserver:http://localhost:8088"
+
+
+
+server:
+  port: 8083
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+spring:
+  application:
+    name: ticket-service
+  datasource:
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/microservice-test?createDatabaseIfNotExist=true
+  config:
+    import: "optional:configserver:http://localhost:8088"
