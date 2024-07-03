@@ -1,53 +1,35 @@
-#server:
-#  port: 8090
-#eureka:
-#  client:
-#    register-with-eureka: true
-#    fetch-registry: true
-#    service-url:
-#      defualzone: http://localhost:8761/eureka
-#spring:
-#  application:
-#    name: api-gateway
-#  cloud:
-#    gateway:
-#      mvc:
-#        routes:
-#          - id: customer-service
-#            uri: lb://customer-service
-#            predicates:
-#              - Path=/api/v1/customer/**
-#          - id: order-service
-#            uri: lb://order-service
-#            predicates:
-#              - Path=/api/v1/order/**
-
-
 server:
-  port: 8090
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      defaultZone: http://localhost:8761/eureka
+  port: 8085
 spring:
   application:
-    name: api-gateway
+    name: API-GATEWAY
   cloud:
     gateway:
-      routes:
-        - id: vehicle-service
-          uri: lb://vehicle-service
-          predicates:
-            - Path=/customer/**
-        - id: order-service
-          uri: lb://order-service
-          predicates:
-            - Path=/order/**
-        - id: root-redirect
-          uri: lb://customer-service  # or any other service
-          predicates:
-            - Path=/
-          filters:
-            - RedirectTo=302,/customer/**  # or any other endpoint
+      mvc:
+        routes:
+          - id: VEHICLE-SERVICE
+            uri: lb://VEHICLE-SERVICE
+            predicates:
+              - Path=/api/v1/vehicle/**
+          - id: USER-SERVICE
+            uri: lb://USER-SERVICE
+            predicates:
+              - Path=/api/v1/user/**
+          - id: TICKET-SERVICE
+            uri: lb://TICKET-SERVICE
+            predicates:
+              - Path=/api/v1/payment/**
+          - id: PAYMENT-SERVICE
+            uri: lb://PAYMENT-SERVICE
+            predicates:
+              - Path=/api/v1/ticket/**
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+
+
