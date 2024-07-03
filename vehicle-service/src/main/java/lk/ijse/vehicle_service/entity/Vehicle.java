@@ -6,10 +6,7 @@ package lk.ijse.vehicle_service.entity;
     Date : 6/28/2024
 */
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -26,5 +23,10 @@ public class Vehicle {
     private String licensePlate;
     private String make;
     private String model;
-    // getters and setters
+
+    @ManyToOne
+    @JoinColumn(name = "user_name", nullable = false)
+    private User owner;
+//    private String name;
+
 }

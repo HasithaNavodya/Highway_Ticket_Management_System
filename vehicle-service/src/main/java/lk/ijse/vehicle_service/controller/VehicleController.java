@@ -14,17 +14,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/vehicle")
+@RequestMapping("/api/v1/vehicle")
 public class VehicleController {
 
     VehicleController() {
         System.out.println("vehicle invoked");
     }
-
-//    @GetMapping
-//    public String get(){
-//        return "vehicle get method invoked";
-//    }
 
     @Autowired
     private VehicleService vehicleService;
