@@ -1,21 +1,17 @@
-package lk.ijse.ticket_service.controller;/*
-    this application is copyright protected
-    Author : kumara
-    Date : 6/26/2024
-*/
+package lk.ijse.ticket_service.controller;
 
 import lk.ijse.ticket_service.entity.Ticket;
 import lk.ijse.ticket_service.service.TicketService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
-
 
 @RestController
 @RequestMapping("/api/v1/ticket")
 public class TicketController {
+
     TicketController() {
         System.out.println("vehicle invoked");
     }
@@ -29,15 +25,14 @@ public class TicketController {
     private TicketService ticketService;
 
     @PostMapping
-    public boolean registerTicket() {
+    public ResponseEntity<Ticket> registerTicket(@RequestBody Ticket ticket){
         System.out.println("ticker invoke");
-//        try {
-//            Ticket savedTicket = ticketService.saveTicket(ticket);
-//            return new ResponseEntity<>(savedTicket, HttpStatus.CREATED);
-//        } catch (Exception e) {
-//            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
-//        }
-        return true;
+        try {
+            Ticket savedTicket = ticketService.saveTicket(ticket);
+            return new ResponseEntity<>(savedTicket, HttpStatus.CREATED);
+        } catch (Exception e) {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     @GetMapping("/{id}")

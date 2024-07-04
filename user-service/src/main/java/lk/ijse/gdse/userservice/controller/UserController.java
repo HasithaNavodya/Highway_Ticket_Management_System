@@ -1,23 +1,18 @@
-package lk.ijse.gdse.userservice.controller;/*
-    this application is copyright protected
-    Author : kumara
-    Date : 6/30/2024
-*/
+package lk.ijse.gdse.userservice.controller;
 
 import lk.ijse.gdse.userservice.entity.User;
 import lk.ijse.gdse.userservice.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/user")
 public class UserController {
+
     @Autowired
     private UserService userService;
-
     UserController() {
         System.out.println("user invoked");
     }

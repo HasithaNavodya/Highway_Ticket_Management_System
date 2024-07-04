@@ -1,8 +1,4 @@
-package lk.ijse.gdse.userservice.repository;/*
-    this application is copyright protected
-    Author : kumara
-    Date : 6/30/2024
-*/
+package lk.ijse.gdse.userservice.repository;
 
 import lk.ijse.gdse.userservice.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;

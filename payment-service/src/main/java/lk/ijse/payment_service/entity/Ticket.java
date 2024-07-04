@@ -1,10 +1,7 @@
-package lk.ijse.payment_service.entity;/*
-    this application is copyright protected
-    Author : kumara
-    Date : 7/2/2024
-*/
+package lk.ijse.payment_service.entity;
 
 import jakarta.persistence.*;
+import lk.ijse.payment_service.service.util.TicketStatus;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -32,5 +29,8 @@ public class Ticket {
     private String amount;
     private String entryPoint;
     private String exitPoint;
+
+    @Enumerated(EnumType.STRING)
+    private TicketStatus status;
 }
 

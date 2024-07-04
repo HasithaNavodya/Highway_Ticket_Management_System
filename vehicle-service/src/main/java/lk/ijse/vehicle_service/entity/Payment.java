@@ -1,26 +1,26 @@
-package lk.ijse.payment_service.entity;
+package lk.ijse.vehicle_service.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import java.math.BigDecimal;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 
 @Entity
-public class Vehicle {
+public class Payment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String licensePlate;
-    private String make;
-    private String model;
 
     @ManyToOne
-    @JoinColumn(name = "user_name", nullable = false)
-    private User owner;
-//    private String name;
+    @JoinColumn(name = "ticket_id", nullable = false)
+    private Ticket ticketId;
+
+    private String amount;
+    private String status; // Pending, Completed, Failed, etc.
 }

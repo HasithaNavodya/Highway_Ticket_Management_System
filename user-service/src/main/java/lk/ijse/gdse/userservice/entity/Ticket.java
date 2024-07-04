@@ -1,10 +1,7 @@
-package lk.ijse.gdse.userservice.entity;/*
-    this application is copyright protected
-    Author : kumara
-    Date : 7/2/2024
-*/
+package lk.ijse.gdse.userservice.entity;
 
 import jakarta.persistence.*;
+import lk.ijse.gdse.userservice.service.util.TicketStatus;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,6 +12,7 @@ import lombok.NoArgsConstructor;
 
 @Entity
 public class Ticket {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ticketId;
@@ -32,4 +30,7 @@ public class Ticket {
     private String amount;
     private String entryPoint;
     private String exitPoint;
+
+    @Enumerated(EnumType.STRING)
+    private TicketStatus status;
 }

@@ -10,7 +10,6 @@ import org.springframework.web.client.RestTemplate;
 @EnableDiscoveryClient
 @SpringBootApplication
 public class VehicleServiceApplication {
-
 	public static void main(String[] args) {
 		SpringApplication.run(VehicleServiceApplication.class, args);
 	}
@@ -20,5 +19,4 @@ public class VehicleServiceApplication {
 	public RestTemplate restTemplate() {
 		return new RestTemplate();
 	}
-
 }

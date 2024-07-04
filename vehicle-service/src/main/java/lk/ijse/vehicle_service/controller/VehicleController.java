@@ -1,16 +1,10 @@
 package lk.ijse.vehicle_service.controller;
-/*
-    this application is copyright protected
-    Author : kumara
-    Date : 6/28/2024
-*/
 
 import lk.ijse.vehicle_service.entity.Vehicle;
 import lk.ijse.vehicle_service.service.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController

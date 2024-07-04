@@ -1,14 +1,9 @@
-package lk.ijse.payment_service.entity;/*
-    this application is copyright protected
-    Author : kumara
-    Date : 7/2/2024
-*/
+package lk.ijse.payment_service.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import java.math.BigDecimal;
 
 @Data
@@ -17,6 +12,7 @@ import java.math.BigDecimal;
 
 @Entity
 public class Payment {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -27,9 +23,4 @@ public class Payment {
 
     private String amount;
     private String status; // Pending, Completed, Failed, etc.
-
-    public Payment(Ticket ticketId, String amount) {
-        this.ticketId = ticketId;
-        this.amount = amount;
-    }
 }

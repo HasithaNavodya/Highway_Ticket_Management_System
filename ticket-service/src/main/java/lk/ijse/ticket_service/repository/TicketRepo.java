@@ -1,8 +1,4 @@
-package lk.ijse.ticket_service.repository;/*
-    this application is copyright protected
-    Author : kumara
-    Date : 7/1/2024
-*/
+package lk.ijse.ticket_service.repository;
 
 import lk.ijse.ticket_service.entity.Ticket;
 import org.springframework.data.jpa.repository.JpaRepository;

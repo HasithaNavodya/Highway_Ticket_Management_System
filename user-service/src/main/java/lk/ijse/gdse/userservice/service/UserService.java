@@ -1,26 +1,20 @@
-package lk.ijse.gdse.userservice.service;/*
-    this application is copyright protected
-    Author : kumara
-    Date : 6/30/2024
-*/
+package lk.ijse.gdse.userservice.service;
 
 import lk.ijse.gdse.userservice.entity.User;
 import lk.ijse.gdse.userservice.repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
-
 
 @Service
 public class UserService {
+
     @Autowired
     private UserRepo userRepo;
 
     public User registerUser(User user) {
         return userRepo.save(user);
     }
-
     public User getUser(String name) {
         return userRepo.findById(name).orElse(null);
     }
