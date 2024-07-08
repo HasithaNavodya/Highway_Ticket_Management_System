@@ -5,7 +5,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/Microservice_Coursework.iml" filepath="$PROJECT_DIR$/.idea/Microservice_Coursework.iml" />
       <module fileurl="file://$PROJECT_DIR$/api-gateway/api-gateway.iml" filepath="$PROJECT_DIR$/api-gateway/api-gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/config-server/config-server.iml" filepath="$PROJECT_DIR$/config-server/config-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/payment-service/payment-service.iml" filepath="$PROJECT_DIR$/payment-service/payment-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/service-registry/service-registry.iml" filepath="$PROJECT_DIR$/service-registry/service-registry.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ticket-service/ticket-service.iml" filepath="$PROJECT_DIR$/ticket-service/ticket-service.iml" />
     </modules>
   </component>
 </project>
